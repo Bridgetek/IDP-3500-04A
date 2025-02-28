@@ -1,17 +1,22 @@
 # EVE Hal Library
 
-The EVE Hardware Abstraction Layer included with EVE Screen Designer consists of the following modules:
+The EVE Hardware Abstraction Layer consists of the following modules:
 * **EVE_Hal**: This is the lowest level layer, which implements writing to and reading from EVE memory space, as well as sending host commands.
 * **EVE_Host**: Wraps host commands.
 * **EVE_Cmd**: Handles writing to the coprocessor command queue, also ensuring coprocessor fault reports are detected.
+* **EVE_CoCmd**: Wraps the coprocessor commands. <ins> Recommanded to use </ins>
+* **EVE_CoDl**: Wraps the display list commands. <ins> Recommanded to use </ins>
 * **EVE_Util**: Utilities for bootup, reset, and other common management.
+* **EVE_Platform**: Host platform support.
+* **EVE_MediaFifo**: MediaFifo support.
+* **EVE_LoadFile**: load file helper function.
 
 # Usage
 
 ## Include
 
 ```
-#include <EVE_Hal.h>
+#include <EVE_Platform.h>
 ```
 
 ## Initialization
@@ -31,7 +36,7 @@ for (size_t i = 0; i < deviceCount; ++i)
 /* Fetch the default parameters for a device.
 Pass the device index, or -1 to select the first device */
 EVE_HalParameters params = { 0 };
-EVE_Hal_defaultsEx(&params, EVE_BT816, -1);
+EVE_Hal_defaultsEx(&params, -1);
 
 /* Open the specified device */
 EVE_HalContext host = { 0 };
@@ -39,14 +44,9 @@ EVE_HalContext *phost = &host;
 if (!EVE_Hal_open(phost, &params))
 	return false;
 
-/* Get the default bootup parameters for the device.
-Change display resolution in the parameters if needed. */
-EVE_BootupParameters bootupParams;
-EVE_Util_bootupDefaults(phost, &bootupParams);
-
-/* Boot up the device */
-if (!EVE_Util_bootup(phost, &bootupParams))
-	return false;
+/* Bootup and config the device.
+Change display resolution if needed. */
+EVE_Util_bootupConfig(phost);
 
 /* Show a blank screen */
 EVE_Util_clearScreen(phost);
@@ -62,7 +62,33 @@ EVE_Hal_release();
 
 #  EVE Hal
 
-## Initialization functions
+## Initialization functions (Host platform depended)
+
+### EVE_HalImpl_initialize
+
+Initialize HAL platform
+
+### EVE_HalImpl_release
+
+Release HAL platform
+
+### EVE_HalImpl_defaults
+
+Get the default configuration parameters
+
+### EVE_HalImpl_open
+
+Opens a new HAL context
+
+### EVE_HalImpl_close
+
+Close a HAL context
+
+### EVE_HalImpl_idle
+
+Idle
+
+## Intialization helper functions (Host platform independed)
 
 * EVE_Hal_initialize
 * EVE_Hal_release
@@ -71,7 +97,7 @@ EVE_Hal_release();
 * EVE_Hal_close
 * EVE_Hal_idle
 
-## Transfer functions
+## Transfer functions (Host platform depended)
 
 ### EVE_Hal_startTransfer
 
@@ -99,7 +125,7 @@ Ends the transfer started by `EVE_Hal_startTransfer`. From a hardware point of v
 
 Write transfers may be buffered in software, depending on the implementation. In case a write transfer is buffered, it may be transferred during the this function call, or anytime as is most efficient for the underlying implementation.
 
-## Transfer helper functions
+## Transfer helper functions (Host platform independed)
 
 * EVE_Hal_rd8/16/32
 * EVE_Hal_rdMem
@@ -108,22 +134,23 @@ Write transfers may be buffered in software, depending on the implementation. In
 * EVE_Hal_wrProgmem
 * EVE_Hal_wrString
 
-## Hardware functions
+## Hardware functions (Host platform depended)
 
 * EVE_Hal_hostCommand
 * EVE_Hal_hostCommandExt3
 * EVE_Hal_powerCycle
 * EVE_Hal_setSPI
+* EVE_Hal_restoreSPI
 * EVE_Hal_currentFrequency
 
-## Misc
+## Misc (Host platform depended)
 
 * EVE_millis
 * EVE_sleep
 
 # EVE Host
 
-## Host commands
+## Host commands (Host platform independed)
 
 * EVE_Host_clockSelect
 * EVE_Host_pllFreqSelect
@@ -203,9 +230,43 @@ Wait for the command buffer to have at least the requested amount of free space.
 
 Wait for logo to finish displaying. Waits for both the read and write pointer to go to 0. Returns `false` in case a coprocessor fault occurred.
 
+# EVE_CoCmd
+
+It is recommended to use this when calling coprocess commands, as it wraps the EVE_Cmd function, ensuring forward and backward compatibility, along with some optimizations.
+Refer to __EVE_CoCmd.h__.
+
+# EVE_CoDl
+
+It is recommended to use this when calling display list commands, as it wraps the display list functions through EVE_CMD, ensuring forward and backward compatibility, along with some optimizations.
+Refer to __EVE_CoDl.h__.
+
 # EVE Util
 
 * EVE_Util_bootup
 * EVE_Util_shutdown
 * EVE_Util_clearScreen
 * EVE_Util_resetCoprocessor
+
+# EVE Platform
+
+Host platform support, working with EVE_HalImpl to provide host-dependent functions for the EVE Hal above.
+
+# EVE_MediaFifo
+
+* EVE_MediaFifo_set
+* EVE_MediaFifo_rp
+* EVE_MediaFifo_wp
+* EVE_MediaFifo_space
+* EVE_MediaFifo_wrMem
+* EVE_MediaFifo_waitFlush
+* EVE_MediaFifo_waitSpace
+
+# EVE_LoadFile
+
+* EVE_Util_loadRawFile
+* EVE_Util_loadInflateFile
+* EVE_Util_loadImageFile
+* EVE_Util_loadCmdFile
+* EVE_Util_readFile
+* EVE_Util_loadMediaFile
+* EVE_Util_closeFile

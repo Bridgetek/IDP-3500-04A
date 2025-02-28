@@ -12,15 +12,28 @@
  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE     
  POSSIBILITY OF SUCH DAMAGE.                                                    
 ================================================================================
+# Overview
 
-This main folder contains reusable source code for applications. It contains 2 folder: 
+The "Default_firmware" folder includes reusable source code for applications, along with a sample application demonstrating a screensaver. 
 
-1. EVE_HAL: Contains the HAL (Hardware Abstraction Layer) source code, it provide 
-APIs to control (FT811) from FT90X platform.
+# Folder introduction
+```
+📂 Default_firmware
+    ├───eve_hal                        | Hardware abstraction layer for interfacing the FT903 platform with EVE FT811 control support
+    ├───lib                            | Third party libraries
+    │   ├──LCD                         | LCD support library
+    │   ├──fatfs                       | fatfs library for SD card support
+    │   ├──tinyprintf                  | tinyprintf library
+    │   ├──usbdbg                      | Library for supporting the printing of USB debug information
+    ├───.cproject                      | FT903 project file
+    ├───.project                       | FT903 project file
+    ├───Bridgetek_Logo_143x50_ARGB4.c  | Bridgetek logo image data used in the sample application
+    ├───app.c                          | Sample application featuring FT903 and FT811 initialization, calibration, and screensaver functionality
+    ├───app.h                          | Header file for sample application
+```
 
-2. LIB: Contains the third party libraries.
-                     
-Below diagram describe how common folder used in the program:
+# System diagram
+Below diagram describe how this folder used in the program:
                      
                 -------------------------------------------
                 |             Main application            |
@@ -45,7 +58,7 @@ Below diagram describe how common folder used in the program:
                                       |
                                       ▼   
                 -------------------------------------------
-                |               LCD, speaker              | 
+                |               LCD, touch                | 
                 -------------------------------------------
 
 
