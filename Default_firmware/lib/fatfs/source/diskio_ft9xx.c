@@ -38,7 +38,7 @@
 /* storage control modules to the FatFs module with a defined API.       */
 /*-----------------------------------------------------------------------*/
 
-#if defined(__FT900__) || defined(__FT930__)
+#if defined(__FT900__)
 
 #include "ff.h"		/* FatFs lower layer API */
 #include "diskio.h"		/* FatFs lower layer API */

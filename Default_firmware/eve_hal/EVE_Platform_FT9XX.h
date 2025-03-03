@@ -35,6 +35,10 @@
  *      INCLUDES
  *********************/
 #include "EVE_Config.h"
+#if defined(USB_DEBUG)
+#include "usbdbg.h"
+#include "tinyprintf.h"
+#endif
 
 #include <unistd.h>
 #include <stdlib.h>

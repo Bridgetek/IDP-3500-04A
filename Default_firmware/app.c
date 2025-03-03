@@ -47,14 +47,10 @@ bool cbCmdWait(struct EVE_HalContext* phost) {
 }
 
 void Gpu_Init() {
-    uint32_t chipId;
-    size_t deviceIdx;
+    size_t deviceIdx = -1;
     EVE_HalParameters params;
 
     EVE_Hal_initialize();
-
-    chipId = EVE_CHIPID;
-    deviceIdx = -1;
 
     EVE_Hal_defaultsEx(&params, deviceIdx);
     params.CbCmdWait = cbCmdWait;
@@ -88,7 +84,7 @@ bool Eve_Calibrate()
 
     // Print the configured values
     EVE_Hal_rdMem(s_pHalContext, (uint8_t*)transMatrix, REG_TOUCH_TRANSFORM_A, 4 * 6); //read all the 6 coefficients
-    eve_printf_debug("Touch screen transform values are A 0x%x,B 0x%x,C 0x%x,D 0x%x,E 0x%x, F 0x%x\n",
+    eve_printf_debug("Touch screen transform values are A 0x%lx,B 0x%lx,C 0x%lx,D 0x%lx,E 0x%lx, F 0x%lx\n",
         transMatrix[0], transMatrix[1], transMatrix[2], transMatrix[3], transMatrix[4], transMatrix[5]);
 
     return result != 0;

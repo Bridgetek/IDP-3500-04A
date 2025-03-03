@@ -37,9 +37,6 @@
  *********************/
 /* Include all public headers. */
 #include "EVE_Platform_FT9XX.h"
-#if defined(USB_DEBUG)
-#include "usbdbg.h"
-#endif
 #include "EVE_HalImpl.h"
 #include "EVE_Hal.h"
 #include "EVE_Cmd.h"
