@@ -21,6 +21,7 @@ The "Default_firmware" folder includes reusable source code for applications, al
 ```
 📂 Default_firmware
     ├───eve_hal                        | Hardware abstraction layer for interfacing the FT903 platform with EVE FT811 control support
+    ├───example_binary                 | A pre-compiled binary of this default firmware for reference
     ├───lib                            | Third party libraries
     │   ├──LCD                         | LCD support library
     │   ├──fatfs                       | fatfs library for SD card support
