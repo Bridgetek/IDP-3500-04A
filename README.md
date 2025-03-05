@@ -13,10 +13,10 @@ IDP903-35PA is a development module , powered by Bridgetek FT903 microcontroller
 
 
 Here are the folder structure :  
-
-* Docs : documentation, including the datasheet. 
-
-
+* Docs : documentation, including the datasheet, which contains hardware specification.
+* Default firmware:  The source code and binary which is shipped with the product.
+* BSP (Board Support Package) :  To Be Updated
+* 
 ## IDE support for GUI application development  
 
 Bridgetek offers a comprehensive IDE tool, **EVE Screen Designer (ESD)**, to streamline GUI application development.  
