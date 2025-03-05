@@ -9,6 +9,9 @@ IDP903-35PA is a development module , powered by Bridgetek FT903 microcontroller
 *  3.5-inch square LCD (320x480 pixels) with  Projected Capacitive Multi-Touch support
 
 
+![image](https://github.com/user-attachments/assets/822d5385-7be0-481e-a394-3b97d05530ff)
+
+
 Here are the folder structure :  
 
 * Docs : documentation, including the datasheet. 
