@@ -124,9 +124,7 @@ typedef struct EVE_HalDlState
 {
 	// Keep to a minimum
 #if (EVE_DL_OPTIMIZE)
-#if (EVE_SUPPORT_CHIPID >= EVE_FT810)
 	uint32_t PaletteSource;
-#endif
 	uint32_t ColorRGB;
 	int16_t LineWidth;
 	int16_t PointSize;

@@ -160,6 +160,7 @@ void default_fw()
     while (1)
     {
         eve_printf_debug("screensaver\n");
+        uart_puts(UART1, "UART1>Hello\n");
         EVE_sleep(1000);
     }
 }

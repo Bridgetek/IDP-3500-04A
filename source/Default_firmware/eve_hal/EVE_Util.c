@@ -567,7 +567,7 @@ bool EVE_Util_bootup(EVE_HalContext *phost, EVE_BootupParameters *bootup)
 
 		/* Wait for valid chip ID */
 		chipId = EVE_Hal_rd32(phost, ROM_CHIPID);
-		while (EXTRACT_CHIPID(chipId) != EVE_FT811)
+		while (EXTRACT_CHIPID(chipId) != EVE_CHIPID)
 		{
 			eve_printf_debug("EVE ROM_CHIPID after wake up %lx\n", (unsigned long)chipId);
 
