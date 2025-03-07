@@ -699,7 +699,7 @@ void EVE_Mcu_initialize()
 	    uart_data_bits_8, /* No. Data Bits */
 	    uart_parity_none, /* Parity */
 	    uart_stop_bits_1); /* No. Stop Bits */
-#if 1
+#if 0
 	sys_enable(sys_device_uart1);
 	/* Set UART1 GPIO functions to UART1_TXD and UART1_RXD... */
 	gpio_function(GPIO_UART1_TX, pad_uart1_txd); /* UART1 TXD */

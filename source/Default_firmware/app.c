@@ -112,43 +112,26 @@ void Calibration_Save()
 
 void default_fw()
 {
-    uint32_t filesz = 0;
-    uint32_t chunksize = 16 * 1024;
-    uint32_t totalbufflen = 64 * 1024;
-    uint32_t currreadlen = 0;
-    uint32_t wrptr = RAM_G;
 #include "Bridgetek_Logo_143x50_ARGB4.c"
-    filesz = sizeof(data);
+    uint32_t filesz = sizeof(data);
+    uint32_t chunksize = 16 * 1024;
+    uint32_t length = 0;
+    uint32_t addr = RAM_G;
     int offset = 0;
     while (filesz > 0)
     {
-        currreadlen = filesz;
-        if (currreadlen > chunksize)
-        {
-            currreadlen = chunksize;
-        }
-
-        EVE_Hal_wrMem(s_pHalContext, wrptr, &data[offset], currreadlen);
-        offset += currreadlen;
-        wrptr += currreadlen;
-        wrptr = wrptr % (RAM_G + totalbufflen);
-
-        filesz -= currreadlen;
-
-        // if the file is sent over and there is one more chunk size free space.
-        if (filesz == 0)
-        {
-            // Clear the chunksize
-            EVE_CoCmd_memSet(s_pHalContext, wrptr, 0, chunksize);
-            //EVE_Cmd_waitFlush(s_pHalContext);
-        }
+        length = filesz > chunksize ? chunksize : filesz;
+        filesz -= length;
+        EVE_Hal_wrMem(s_pHalContext, addr, &data[offset], length);
+        addr += length;
+        offset += length;
     }
 
     EVE_CoCmd_screenSaver(s_pHalContext); //screen saver command will continuously update the macro0 with vertex2f command
     EVE_CoCmd_dlStart(s_pHalContext);
     EVE_CoDl_clearColorRgb(s_pHalContext, 0xFF, 0xFF, 0xFF);
     EVE_CoDl_clear(s_pHalContext, 1, 1, 1);
-    EVE_CoCmd_gradient(s_pHalContext, 5, 6, 0x007FFF, 551, 633, 0x36CB34);
+    EVE_CoCmd_gradient(s_pHalContext, 5, 6, 0x007FFF, 951, 633, 0x36CB34);
 
     EVE_CoDl_begin(s_pHalContext, BITMAPS);
     EVE_CoCmd_setBitmap(s_pHalContext, RAM_G, ARGB4, 143, 50);
@@ -159,9 +142,6 @@ void default_fw()
     EVE_Cmd_waitFlush(s_pHalContext);
     while (1)
     {
-        eve_printf_debug("screensaver\n");
-        uart_puts(UART1, "UART1>Hello\n");
-        EVE_sleep(1000);
     }
 }
 
