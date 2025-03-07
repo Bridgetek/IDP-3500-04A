@@ -75,7 +75,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/68a45ff8-fefa-42bb-9c14-83e824533ba8)
 
-![image](https://github.com/user-attachments/assets/00c903d3-386c-4d30-9e61-d1060c3148e7)
+![image](https://github.com/user-attachments/assets/4a5b6de9-e662-4278-8b5b-e7e4f0fce9f1)
 
 4. Setup building enviroment
 
@@ -89,7 +89,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/bdecefd3-1aa3-47bd-9e6d-577adec14896)
 
-6. The binary file will be in [YOURPATH]\IDP903-35PA\Default_firmware\FT90x_Debug\IDP903_35PA.bin
+6. The binary file will be in [YOURPATH]\IDP903-35PA\source\Default_firmware\FT90x_Debug\IDP903_35PA.bin
 
 7. Program the above binary onto the IDP903-35PA development board (ensure the debug module is connected to the one-wire debug port as specified in the 'Hardware Requirements' section).
 
@@ -99,7 +99,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/4a5c2fcf-4449-4ff5-bc9e-a2173af7b319)
 
-![image](https://github.com/user-attachments/assets/b5b07444-7415-44af-9ebb-602419845ab2)
+![image](https://github.com/user-attachments/assets/6feaa7c8-a894-4f8f-90fb-629636c548bd)
 
 ![image](https://github.com/user-attachments/assets/f8bf7657-44ae-4372-b6f1-485f758f840d)
 
