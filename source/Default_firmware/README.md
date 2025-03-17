@@ -49,15 +49,15 @@ Below diagram describe how this folder used in the program:
                 -------------------------------------------
 
 # Usage
-IDP903-35PA is using EVE FT811 with FT903 host platform. Users are expected to be familiar with the FT81X programming guide and data sheet for EVE FT811 chip.
+**IDP-3500-04A** is using EVE FT811 with FT903 host platform. Users are expected to be familiar with the FT81X programming guide and data sheet for EVE FT811 chip.
 
 This folder does not include the toolchain for FT903. For information on downloading, installing, and using the toolchain, please visit https://brtchip.com/ft9xx-toolchain/. This folder used toolchain setup can be found at https://brtchip.com/wp-content/uploads/Support/SoftwareExample/FT9xx/FT9xx_Toolchain_Setup_2.8.0_rc2.exe
 
 ## Hardware requirement
-* IDP903-35PA development board
+* IDP-3500-04A development board
 * FTDI UMFTPD2A Module
 
-![IDP903-35PA](https://github.com/user-attachments/assets/9ce471f0-070a-4161-aca9-e6e801a2688d)
+![IDP-3500-04A](https://github.com/user-attachments/assets/9ce471f0-070a-4161-aca9-e6e801a2688d)
 
 
 ## Build instruction
@@ -69,7 +69,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 2. Launch 'Eclipse for FT9xx', and setup workspace
 
-3. Import IDP903-35PA project
+3. Import IDP-3500-04A project
 
 ![image](https://github.com/user-attachments/assets/ed8766c1-4efd-440e-b507-c4edfc1a0e24)
 
@@ -89,9 +89,9 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/bdecefd3-1aa3-47bd-9e6d-577adec14896)
 
-6. The binary file will be in [YOURPATH]\IDP903-35PA\source\Default_firmware\FT90x_Debug\IDP903_35PA.bin
+6. The binary file will be in [YOURPATH]\IDP-3500-04A\source\Default_firmware\FT90x_Debug\IDP-3500-04A.bin
 
-7. Program the above binary onto the IDP903-35PA development board (ensure the debug module is connected to the one-wire debug port as specified in the 'Hardware Requirements' section).
+7. Program the above binary onto the IDP-3500-04A development board (ensure the debug module is connected to the one-wire debug port as specified in the 'Hardware Requirements' section).
 
 ![image](https://github.com/user-attachments/assets/b71c12f4-a79f-47f3-a6fb-926f0665ccdb)
 

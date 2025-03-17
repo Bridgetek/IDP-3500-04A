@@ -77,7 +77,7 @@ Additionally, the following support flags are set:
 ///////////////////////////////////////////////////////////////////////
 
 /** @details
-IDP903-35PA
+IDP-3500-04A
 */
 #define FT811_ENABLE
 #define ENABLE_SPI_QUAD
