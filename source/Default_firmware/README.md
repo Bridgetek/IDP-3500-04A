@@ -57,8 +57,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 * IDP-3500-04A development board
 * FTDI UMFTPD2A Module
 
-![IDP-3500-04A](https://github.com/user-attachments/assets/9ce471f0-070a-4161-aca9-e6e801a2688d)
-
+![IDP-3500-04A](https://github.com/user-attachments/assets/2e4747e1-46f4-41f1-8bae-bab1da674fc6)
 
 ## Build instruction
 1. Install FT903 toolchain and download this folder
@@ -75,11 +74,11 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/68a45ff8-fefa-42bb-9c14-83e824533ba8)
 
-![image](https://github.com/user-attachments/assets/4a5b6de9-e662-4278-8b5b-e7e4f0fce9f1)
+![image](https://github.com/user-attachments/assets/dc7be33f-203a-4c7b-a8b3-15ee3d199dd0)
 
 4. Setup building enviroment
 
-![image](https://github.com/user-attachments/assets/1dc5e29a-554e-4f94-8b05-63d1995292c4)
+![image](https://github.com/user-attachments/assets/37cba8e2-4bad-44c3-a1d5-dd82e97dc439)
 
 ![image](https://github.com/user-attachments/assets/b12c211c-8948-4d21-8c28-f5c389bb2374)
 
@@ -87,7 +86,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 5. Build the project
 
-![image](https://github.com/user-attachments/assets/bdecefd3-1aa3-47bd-9e6d-577adec14896)
+![image](https://github.com/user-attachments/assets/02835591-88de-493a-bb27-c393ec8f6e4e)
 
 6. The binary file will be in [YOURPATH]\IDP-3500-04A\source\Default_firmware\FT90x_Debug\IDP-3500-04A.bin
 
@@ -99,7 +98,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/4a5c2fcf-4449-4ff5-bc9e-a2173af7b319)
 
-![image](https://github.com/user-attachments/assets/6feaa7c8-a894-4f8f-90fb-629636c548bd)
+![image](https://github.com/user-attachments/assets/824b5920-9936-4638-9262-ba3f422f5265)
 
 ![image](https://github.com/user-attachments/assets/f8bf7657-44ae-4372-b6f1-485f758f840d)
 
