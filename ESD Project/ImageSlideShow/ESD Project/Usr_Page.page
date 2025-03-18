@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<_PageDocument _uuid="{f11ff481-11f8-435c-b568-96cf2a5053c8}" _locked="false" displayName="" comment="" category="" defaultSignal="" icon="" _version="40001" _revision="1" purpose="Page" backToFront="">
+    <_ActorContainer _uuid="{af0f336d-1c97-48d8-9837-2bce757ecb62}" _name="Actors" _locked="false"/>
+    <_ConnectionContainer _uuid="{e479705e-cdeb-4165-93b0-043eb600f5f6}" _name="Connections" _locked="false"/>
+    <_NodeContainer _uuid="{466bfbc3-9d48-410e-a11c-c2595af56416}" _name="Nodes" _locked="false"/>
+    <_WidgetContainer _uuid="{bf268a6e-5001-4593-be3b-67537a7a874d}" _name="Widgets" _locked="false">
+        <__Properties>
+            <width type="int">400</width>
+            <height type="int">300</height>
+        </__Properties>
+        <Ft_Esd_Layout_Fixed _super="_Widget" _uuid="{fbaeb683-c880-4eec-83a5-232a34fb185b}" _name="Fixed Position" _locked="false" _x="0" _y="0" _color="#8544a5" _background="#606060" _z="0">
+            <__Properties>
+                <_widgetActive type="bool">true</_widgetActive>
+                <_widgetX type="int">0</_widgetX>
+                <_widgetY type="int">0</_widgetY>
+                <_widgetWidth type="int">50</_widgetWidth>
+                <_widgetHeight type="int">50</_widgetHeight>
+            </__Properties>
+        </Ft_Esd_Layout_Fixed>
+    </_WidgetContainer>
+</_PageDocument>

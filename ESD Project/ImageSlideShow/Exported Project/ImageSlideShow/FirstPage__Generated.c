@@ -12,8 +12,6 @@ ESD_CORE_EXPORT void Esd_Noop(void *context);
 
 static Esd_BitmapCell FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array[9];
 static const Esd_BitmapCell* FirstPage_ESD_Image_SlideShow_Array_Input__Property(void *context, size_t *size) { *size = 9; return FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array; }
-static uint8_t FirstPage_ESD_Toggle_Font__Property(void *context) { return 29; }
-static uint8_t FirstPage_ESD_Push_Button_Font__Property(void *context) { return 29; }
 static uint8_t FirstPage_ESD_Label_Font__Property(void *context) { return 31; }
 static const char * FirstPage_ESD_Label_Text__Property(void *context) { return "ESD"; }
 
@@ -42,16 +40,56 @@ void FirstPage__Fixed_Position__Initializer(FirstPage *context)
 	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)context);
 }
 
+void FirstPage__ESD_Push_Button__Initializer(FirstPage *context)
+{
+	Ft_Esd_PushButton *object = (Ft_Esd_PushButton *)&context->ESD_Push_Button;
+	Ft_Esd_PushButton__Initializer(object);
+	object->Owner = (void *)context;
+	object->Widget.Active = 1;
+	object->Widget.LocalX = 161;
+	object->Widget.LocalY = 94;
+	object->Widget.LocalWidth = 120;
+	object->Widget.LocalHeight = 36;
+	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
+}
+
+void FirstPage__ESD_Toggle__Initializer(FirstPage *context)
+{
+	Ft_Esd_Toggle *object = (Ft_Esd_Toggle *)&context->ESD_Toggle;
+	Ft_Esd_Toggle__Initializer(object);
+	object->Owner = (void *)context;
+	object->Widget.Active = 1;
+	object->Widget.LocalX = 28;
+	object->Widget.LocalY = 101;
+	object->Widget.LocalWidth = 93;
+	object->Widget.LocalHeight = 37;
+	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
+}
+
+void FirstPage__ESD_Scrolling_Text__Initializer(FirstPage *context)
+{
+	Ft_Esd_ScrollingText *object = (Ft_Esd_ScrollingText *)&context->ESD_Scrolling_Text;
+	Ft_Esd_ScrollingText__Initializer(object);
+	object->Owner = (void *)context;
+	object->Widget.Active = 1;
+	object->Widget.LocalX = 3;
+	object->Widget.LocalY = 408;
+	object->Widget.LocalWidth = 320;
+	object->Widget.LocalHeight = 37;
+	object->Position = RIGHT_TO_LEFT;
+	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
+}
+
 void FirstPage__ESD_Image_SlideShow__Initializer(FirstPage *context)
 {
 	Ft_Esd_Image_SlideShow *object = (Ft_Esd_Image_SlideShow *)&context->ESD_Image_SlideShow;
 	Ft_Esd_Image_SlideShow__Initializer(object);
 	object->Owner = (void *)context;
 	object->Widget.Active = 1;
-	object->Widget.LocalX = 21;
-	object->Widget.LocalY = 161;
-	object->Widget.LocalWidth = 282;
-	object->Widget.LocalHeight = 190;
+	object->Widget.LocalX = 15;
+	object->Widget.LocalY = 166;
+	object->Widget.LocalWidth = 284;
+	object->Widget.LocalHeight = 193;
 	FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array[0] = barbecue_0();
 	FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array[1] = chess_0();
 	FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array[2] = diveevo_0();
@@ -62,48 +100,6 @@ void FirstPage__ESD_Image_SlideShow__Initializer(FirstPage *context)
 	FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array[7] = rose_0();
 	FirstPage_ESD_Image_SlideShow_Array_Input__Property_Array[8] = seagull_0();
 	object->Array_Input = FirstPage_ESD_Image_SlideShow_Array_Input__Property;
-	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
-}
-
-void FirstPage__ESD_Toggle__Initializer(FirstPage *context)
-{
-	Ft_Esd_Toggle *object = (Ft_Esd_Toggle *)&context->ESD_Toggle;
-	Ft_Esd_Toggle__Initializer(object);
-	object->Owner = (void *)context;
-	object->Widget.Active = 1;
-	object->Widget.LocalX = 18;
-	object->Widget.LocalY = 89;
-	object->Widget.LocalWidth = 123;
-	object->Widget.LocalHeight = 42;
-	object->Font = FirstPage_ESD_Toggle_Font__Property;
-	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
-}
-
-void FirstPage__ESD_Scrolling_Text__Initializer(FirstPage *context)
-{
-	Ft_Esd_ScrollingText *object = (Ft_Esd_ScrollingText *)&context->ESD_Scrolling_Text;
-	Ft_Esd_ScrollingText__Initializer(object);
-	object->Owner = (void *)context;
-	object->Widget.Active = 1;
-	object->Widget.LocalX = -1;
-	object->Widget.LocalY = 404;
-	object->Widget.LocalWidth = 320;
-	object->Widget.LocalHeight = 37;
-	object->Position = RIGHT_TO_LEFT;
-	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
-}
-
-void FirstPage__ESD_Push_Button__Initializer(FirstPage *context)
-{
-	Ft_Esd_PushButton *object = (Ft_Esd_PushButton *)&context->ESD_Push_Button;
-	Ft_Esd_PushButton__Initializer(object);
-	object->Owner = (void *)context;
-	object->Widget.Active = 1;
-	object->Widget.LocalX = 163;
-	object->Widget.LocalY = 82;
-	object->Widget.LocalWidth = 136;
-	object->Widget.LocalHeight = 45;
-	object->Font = FirstPage_ESD_Push_Button_Font__Property;
 	Ft_Esd_Widget_InsertBottom((Ft_Esd_Widget *)object, (Ft_Esd_Widget *)&context->Fixed_Position);
 }
 
@@ -132,10 +128,10 @@ void FirstPage__Initializer(FirstPage *context)
 	context->Widget.LocalWidth = 400;
 	context->Widget.LocalHeight = 300;
 	FirstPage__Fixed_Position__Initializer(context);
-	FirstPage__ESD_Image_SlideShow__Initializer(context);
+	FirstPage__ESD_Push_Button__Initializer(context);
 	FirstPage__ESD_Toggle__Initializer(context);
 	FirstPage__ESD_Scrolling_Text__Initializer(context);
-	FirstPage__ESD_Push_Button__Initializer(context);
+	FirstPage__ESD_Image_SlideShow__Initializer(context);
 	FirstPage__ESD_Label__Initializer(context);
 }
 
@@ -144,10 +140,10 @@ void FirstPage_End(FirstPage *context)
 	void *owner = context->Owner;
 	Ft_Esd_Widget_End((Ft_Esd_Widget *)context);
 	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->Fixed_Position); 
-	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Image_SlideShow); 
+	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Push_Button); 
 	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Toggle); 
 	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Scrolling_Text); 
-	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Push_Button); 
+	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Image_SlideShow); 
 	Ft_Esd_Widget_Detach((Ft_Esd_Widget *)&context->ESD_Label); 
 }
 

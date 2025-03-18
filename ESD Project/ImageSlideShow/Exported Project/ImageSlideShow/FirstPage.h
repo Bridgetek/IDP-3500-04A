@@ -58,10 +58,10 @@ typedef struct
 		Ft_Esd_Widget Widget;
 	};
 	Ft_Esd_Layout_Fixed Fixed_Position;
-	Ft_Esd_Image_SlideShow ESD_Image_SlideShow;
+	Ft_Esd_PushButton ESD_Push_Button;
 	Ft_Esd_Toggle ESD_Toggle;
 	Ft_Esd_ScrollingText ESD_Scrolling_Text;
-	Ft_Esd_PushButton ESD_Push_Button;
+	Ft_Esd_Image_SlideShow ESD_Image_SlideShow;
 	Ft_Esd_Label ESD_Label;
 } FirstPage;
 

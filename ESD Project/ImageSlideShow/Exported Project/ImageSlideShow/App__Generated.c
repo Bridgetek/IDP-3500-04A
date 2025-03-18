@@ -150,10 +150,10 @@ int main(int argc, char *argv[])
 		const char *dataPath = "../../Data";
 #endif
 #ifdef ESD_FLASH_FILES
-		if (stat("ESD_Project__Flash.bin", &st) == 0)
+		if (stat("ImageSlideShow__Flash.bin", &st) == 0)
 		{
 #ifdef _WIN32
-			wcscpy_s(ep.FlashFilePaths[ESD_FLASH_BT815], _countof(ep.FlashFilePaths[ESD_FLASH_BT815]), L"ESD_Project__Flash.bin");
+			wcscpy_s(ep.FlashFilePaths[ESD_FLASH_BT815], _countof(ep.FlashFilePaths[ESD_FLASH_BT815]), L"ImageSlideShow__Flash.bin");
 #endif
 		}
 #endif

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<_WidgetDocument _uuid="{c0d51414-8463-4468-9345-25b757df72d4}" _locked="false" displayName="" comment="" category="" defaultSignal="" icon="" _version="40001" _revision="2" purpose="Page" backToFront="">
+    <_ActorContainer _uuid="{4d16dc2f-7984-4b04-b9a3-6bdf880a3360}" _name="Actors" _locked="false"/>
+    <_ConnectionContainer _uuid="{6223c3c6-c0f7-48da-b2db-25fd21d7bdf5}" _name="Connections" _locked="false"/>
+    <_NodeContainer _uuid="{65a017af-5e74-4f86-b710-b3845ff1cd9d}" _name="Nodes" _locked="false"/>
+    <_WidgetContainer _uuid="{799d3dc2-2bd5-4b70-a583-fcd5c1b3650a}" _name="Widgets" _locked="false">
+        <__Properties>
+            <width type="int">400</width>
+            <height type="int">300</height>
+        </__Properties>
+        <Ft_Esd_Layout_Switch _super="_Widget" _uuid="{a477b6c0-cad0-48ec-aaa9-7d0b0c51c7ac}" _name="Switch Page" _locked="false" _x="0" _y="0" _color="#8544a5" _background="#606060" _z="0">
+            <__Properties>
+                <_widgetActive type="bool">true</_widgetActive>
+                <_widgetX type="int">0</_widgetX>
+                <_widgetY type="int">0</_widgetY>
+                <_widgetWidth type="int">50</_widgetWidth>
+                <_widgetHeight type="int">50</_widgetHeight>
+                <Spinner type="String">1</Spinner>
+                <AutoResize type="String">0</AutoResize>
+            </__Properties>
+            <FirstPage _super="_Widget" _uuid="{e400b830-d136-4084-9f61-b7e79cb72cd5}" _name="Main Page" _locked="false" _x="300" _y="0" _color="#b02122" _background="#606060" _allocation="Lazy" _z="0">
+                <__Properties>
+                    <_widgetActive type="bool">true</_widgetActive>
+                    <_widgetX type="int">0</_widgetX>
+                    <_widgetY type="int">0</_widgetY>
+                    <_widgetWidth type="int">400</_widgetWidth>
+                    <_widgetHeight type="int">300</_widgetHeight>
+                </__Properties>
+            </FirstPage>
+        </Ft_Esd_Layout_Switch>
+    </_WidgetContainer>
+</_WidgetDocument>
