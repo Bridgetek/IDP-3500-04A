@@ -22,6 +22,8 @@ The BSP is designed as a support package for devices. Sample usage can be found 
 
 3. To enable debug information in the eve_hal folder, set ```_DEBUG``` in *eclipse->properties->C/C++ General->Paths and Symbols->Symbols*
 
+![image](https://github.com/user-attachments/assets/ae819fc7-27a9-41bc-b64b-6ac3481cf156)
+
 ### Folder instroduction
 
 ```
@@ -50,7 +52,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/c2f67d4d-29cd-4d9d-9dbf-185caacc3c07)
 
-
+![image](https://github.com/user-attachments/assets/a4cd04a5-7876-422a-b517-3b1860273202)
 
 2. Launch 'Eclipse for FT9xx', and setup workspace
 
@@ -60,21 +62,23 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/68a45ff8-fefa-42bb-9c14-83e824533ba8)
 
-
+![image](https://github.com/user-attachments/assets/be3c5f7c-1b7a-472f-b562-f4b274ab1a0d)
 
 4. Setup building enviroment
 
+![image](https://github.com/user-attachments/assets/6de2647a-ef21-4ff0-b193-17cb1dc6e46d)
 
+![image](https://github.com/user-attachments/assets/ae819fc7-27a9-41bc-b64b-6ac3481cf156)
 
 > If '_DEBUG' is defined, the print information will be sent for eve_hal.
 
 5. Build the project
 
+![image](https://github.com/user-attachments/assets/6ef8874c-5a38-4fb0-b171-74486d880234)
 
+6. The binary file will be in *[YOURPATH]\IDP-3500-04A\source\BSP\FT90x_Debug\BSP_IDP-3500-04A.bin*
 
-6. The binary file will be in [YOURPATH]\IDP-3500-04A\source\BSP\FT90x_Debug\BSP_IDP-3500-04A.bin
-
-7. Program the above binary onto the BSP_IDP-3500-04A development board (ensure the debug module is connected to the one-wire debug port as following).
+7. Program the above binary onto the IDP-3500-04A development board (ensure the debug module is connected to the one-wire debug port as following).
 
 ![IDP-3500-04A](https://github.com/user-attachments/assets/2e4747e1-46f4-41f1-8bae-bab1da674fc6)
 
@@ -84,7 +88,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/4a5c2fcf-4449-4ff5-bc9e-a2173af7b319)
 
-
+![image](https://github.com/user-attachments/assets/65f2d2c6-0058-472e-bfe3-88385fb33bad)
 
 ![image](https://github.com/user-attachments/assets/f8bf7657-44ae-4372-b6f1-485f758f840d)
 
