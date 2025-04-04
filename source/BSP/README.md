@@ -8,7 +8,7 @@ This repository offers hardware support for the IDP-3500-04A platform. This BSP 
 - FT811 graphics controller with display, touch and audio functionality
 - 3.5-inch TFT LCD with capacitive touch
 - Integrated buzzer for audio notifications
-- Powered by a 9V-24VDC source vis an RJ45 port
+- Powered by a 9V-24VDC source via an RJ45 port
 
 ## Software Features
 The BSP is designed as a support package for devices. Sample usage can be found in *bsp_test.c*
@@ -28,7 +28,7 @@ The BSP is designed as a support package for devices. Sample usage can be found 
 
 ```
 📂 BSP
-├── drivers          | collection of device drivers for IDP-1000-04A peripherals
+├── drivers          | collection of device drivers for IDP-3500-04A peripherals
 │   ├── eve_hal      | EVE GPU device driver
 │   ├── LCD          | KD2401 LCD controller
 │   ├── sdcard       | SD card driver and FATFS filesystem library
