@@ -18,7 +18,7 @@ The BSP is designed as a support package for devices. Sample usage can be found 
     - SD card device driver & FATFS filesystem library
     - FT811 EVE GPU device drivers 
 
-2. By default, debug information is transmitted via USB because ```ENABLE_USBDBG``` is set to one in *bsp_debug.h*. However, if ```ENABLE_USBDBG``` is disabled, the debug information will be sent through UART0 instead. 
+2. By default, debug information is transmitted via USB because ```ENABLE_USBDBG``` is set to one in *bsp_debug.h*. However, if ```ENABLE_USBDBG``` is disabled, the debug information will be sent through UART0 instead. If the board is powered via RJ45 instead of USB, ```ENABLE_USBDBG``` must be set to 0.
 
 3. To enable debug information in the eve_hal folder, set ```_DEBUG``` in *eclipse->properties->C/C++ General->Paths and Symbols->Symbols*
 
