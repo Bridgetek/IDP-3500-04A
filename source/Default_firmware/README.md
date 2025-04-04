@@ -82,7 +82,7 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/b12c211c-8948-4d21-8c28-f5c389bb2374)
 
-> If 'USB_DEBUG' is defined, the print information will be sent via USB; otherwise, it will be sent via UART0.
+> If ```USB_DEBUG``` is defined, the print information will be sent via USB; otherwise, it will be sent via UART0. If the board is powered via RJ45 instead of USB, ```USB_DEBUG``` must be undefined.
 
 5. Build the project
 
