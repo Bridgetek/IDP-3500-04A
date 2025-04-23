@@ -44,6 +44,7 @@
 #define ENABLE_SD       1
 #define ENABLE_EVE      1
 #define ENABLE_LED      1
+#define ENABLE_ROTARY   1
 #define ENABLE_TEMP     1
 
 void init_bsp(void);
@@ -87,7 +88,9 @@ void init_bsp(void)
 	PR_INFO("\n%s\n", APP_TITLE_STR);
 	PR_INFO("Build date: %s, %s\n", SW_BUILDDATE_STR, SW_BUILDTIME_STR);
 
+#if ENABLE_ROTARY
 	PR_INFO("rotary ID %d\n", read_rotary());
+#endif
 
 #if ENABLE_LED
 	gpio_function(RGB_LED_RED_GPIO, pad_gpio57);
