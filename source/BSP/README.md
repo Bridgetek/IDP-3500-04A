@@ -1,7 +1,7 @@
 # IDP-3500-04A Board Support Package
 
 ## Introduction
-This repository offers hardware support for the IDP-3500-04A platform. This BSP can function independently with a test application. A USB console is provided for diplaying debug information.
+This repository offers hardware support for the IDP-3500-04A platform. This BSP can function independently with a test application. A USB console is provided for displaying debug information.
 
 ## Hardware Features
 - FT903 32-bit RISC microcontroller (MCU) with 100MHz system clock
@@ -9,37 +9,46 @@ This repository offers hardware support for the IDP-3500-04A platform. This BSP 
 - 3.5-inch TFT LCD with capacitive touch
 - Integrated buzzer for audio notifications
 - Powered by a 9V-24VDC source via an RJ45 port
+- LED indicator
+- ID switch for unique ID setting
+- Hardware reset button
+- Board temperature measurement based on the MAX31725 I2C sensor
 
 ## Software Features
 The BSP is designed as a support package for devices. Sample usage can be found in *bsp_test.c*
 
 1. The application calls the BSP’s ```init_bsp()```function to initialize interfaces and peripherals:
     - FT903 UART0 and USB console
+    - rotary
+    - LED
+    - tempurature sensor
     - SD card device driver & FATFS filesystem library
     - FT811 EVE GPU device drivers 
 
-2. By default, debug information is transmitted via USB because ```ENABLE_USBDBG``` is set to one in *bsp_debug.h*. However, if ```ENABLE_USBDBG``` is disabled, the debug information will be sent through UART0 instead. If the board is powered via RJ45 instead of USB, ```ENABLE_USBDBG``` must be set to 0.
+2. By default, debug information is transmitted via USB because ```ENABLE_USBDBG``` is set to one in *eclipse->properties->C/C++ General->Paths and Symbols->Symbols*
+. However, if ```ENABLE_USBDBG``` is se to 0, the debug information will be sent through UART0 instead. If the board is powered via RJ45 instead of USB, ```ENABLE_USBDBG``` must be set to 0.
 
 3. To enable debug information in the eve_hal folder, set ```_DEBUG``` in *eclipse->properties->C/C++ General->Paths and Symbols->Symbols*
 
-![image](https://github.com/user-attachments/assets/ae819fc7-27a9-41bc-b64b-6ac3481cf156)
+![image](https://github.com/user-attachments/assets/87f1897d-1178-4c3f-aeb9-b6054fb1e080)
 
-### Folder instroduction
+### Folder introduction
 
 ```
 📂 BSP
 ├── drivers          | collection of device drivers for IDP-3500-04A peripherals
 │   ├── eve_hal      | EVE GPU device driver
 │   ├── LCD          | KD2401 LCD controller
+│   ├── rotary       | rotary driver
 │   ├── sdcard       | SD card driver and FATFS filesystem library
+│   ├── temp_sensor  | MAX31725 I2C temperature sensor
 │   ├── tinyprintf   | tinyprintf library
 │   └── usbdbg       | USB debug driver
 ├── example_binary   | A pre-compiled binary of this BSP for reference
-├── extras           | CLI debug terminal sources
 ├── include          | configuration and build-time parameters
-├── bsp_test.c       | main initialization and tasks routines
 ├── .cproject        | FT903 project file
 ├── .project         | FT903 project file
+├── bsp_test.c       | main initialization and tasks routines
 ├── README.md        | this README file
 
 ```
@@ -68,9 +77,12 @@ This folder does not include the toolchain for FT903. For information on downloa
 
 ![image](https://github.com/user-attachments/assets/6de2647a-ef21-4ff0-b193-17cb1dc6e46d)
 
-![image](https://github.com/user-attachments/assets/ae819fc7-27a9-41bc-b64b-6ac3481cf156)
+![image](https://github.com/user-attachments/assets/fe5a731f-0016-40d9-9252-730029af0ca2)
 
-> If '_DEBUG' is defined, the print information will be sent for eve_hal.
+> [!CAUTION]
+> If ```_DEBUG``` is defined, the print information will be sent for eve_hal.
+> 
+> If ```ENABLE_USBDBG``` is defined to 1, the print information will be sent via USB; If ```ENABLE_USBDBG``` is defined to 0, it will be sent via UART0. If the board is powered via RJ45 instead of USB, ```ENABLE_USBDBG``` must be set to 0.
 
 5. Build the project
 
