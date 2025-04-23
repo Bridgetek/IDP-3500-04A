@@ -60,6 +60,22 @@
 #define GPIO_SD_CD (25)
 #define GPIO_SD_WP (26)
 
+/** @brief RED status light gpio pin  */
+#define RGB_LED_RED_GPIO		    57
+/** @brief Green status light gpio pin */
+#define RGB_LED_GREEN_GPIO			56
+
+/** @brief switch gpio pin */
+#define SWITCH_ID0				6
+#define SWITCH_ID1				7
+#define SWITCH_ID2				8
+#define SWITCH_ID3				9
+
+/** @brief 8bit I2C address for the temperature sensor */
+#define TEMP_SENSOR_ADDRESS			(0x90)
+#define TEMP_SENSOR_I2C0_SCL         44
+#define TEMP_SENSOR_I2C0_SDA         45
+
  /* Timer 1 is been utilized in case of FT900 platform */
 #define FT900_FT_MILLIS_TIMER (timer_select_b)
 #define FT900_TIMER_MAX_VALUE (65536L)

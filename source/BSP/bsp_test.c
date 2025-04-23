@@ -33,6 +33,8 @@
 #include "bsp_hwdefs.h"
 #include "eve_app.h"
 #include "sdcard.h"
+#include "rotary.h"
+#include "max31725.h"
 
 #define SW_BUILDDATE_STR __DATE__
 #define SW_BUILDTIME_STR __TIME__
@@ -41,6 +43,8 @@
 
 #define ENABLE_SD       1
 #define ENABLE_EVE      1
+#define ENABLE_LED      1
+#define ENABLE_TEMP     1
 
 void init_bsp(void);
 #if ENABLE_USBDBG
@@ -83,6 +87,54 @@ void init_bsp(void)
 	PR_INFO("\n%s\n", APP_TITLE_STR);
 	PR_INFO("Build date: %s, %s\n", SW_BUILDDATE_STR, SW_BUILDTIME_STR);
 
+	PR_INFO("rotary ID %d\n", read_rotary());
+
+#if ENABLE_LED
+	gpio_function(RGB_LED_RED_GPIO, pad_gpio57);
+	gpio_dir(RGB_LED_RED_GPIO, pad_dir_output);
+	gpio_pull(RGB_LED_RED_GPIO, pad_pull_none);
+	gpio_write(RGB_LED_RED_GPIO, 1);
+	gpio_function(RGB_LED_GREEN_GPIO, pad_gpio56);
+	gpio_dir(RGB_LED_GREEN_GPIO, pad_dir_output);
+	gpio_pull(RGB_LED_GREEN_GPIO, pad_pull_none);
+	gpio_write(RGB_LED_GREEN_GPIO, 1);
+
+	// red light
+	gpio_write(RGB_LED_GREEN_GPIO, 1);
+	gpio_write(RGB_LED_RED_GPIO, 0);
+	PR_INFO("LED red light\n");
+#endif
+
+#if ENABLE_TEMP
+	int err = 0;
+	for (int i = 0; i < 3; i++) {
+		err = max31725_init();
+		if (err == 0)
+			break;
+	}
+	if (err < 0) {
+		PR_ERROR("Temperature sensor max31725_init(): err = %d\n", err);
+	}
+	else {
+		PR_INFO("Temperature sensor initialised\n");
+		float temp = max31725_deg_C();
+		if (temp < -128.0) {
+#if ENABLE_USBDBG
+			PR_ERROR("ERROR: max31725_deg_C() = %ld deg\n", (uint32_t)temp); // Tinyprint not support %f
+#else
+			PR_ERROR("ERROR: max31725_deg_C() = %f deg\n", temp);
+#endif
+		}
+		else {
+#if ENABLE_USBDBG
+			PR_INFO("max31725_deg_C() = %ld deg_C\n", (uint32_t)temp);
+#else
+			PR_INFO("max31725_deg_C() = %f deg_C\n", temp);
+#endif
+		}
+	}
+#endif
+
 #if ENABLE_SD
 	initSdHost();
 	if (!loadSdCard()) {
@@ -104,6 +156,13 @@ void init_bsp(void)
 
 	Eve_Calibrate();
 #endif /* ENABLE_EVE */
+
+#if ENABLE_LED
+	// green light
+	gpio_write(RGB_LED_RED_GPIO, 1);
+	gpio_write(RGB_LED_GREEN_GPIO, 0);
+	PR_INFO("LED green light\n");
+#endif
 }
 
 #if ENABLE_USBDBG

@@ -28,6 +28,8 @@
 								<option id="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.other.1419987687" name="Other debugging flags" superClass="com.brtchip.managedbuild.gnu.cross.ft90x.build.gcc.c.compiler.option.debugging.other" useByScannerDiscovery="false" value="-fvar-tracking -fvar-tracking-assignments" valueType="string"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.compiler.ft900.debug.base.option.include.paths.1040088861" name="Include paths (-I)" superClass="com.brtchip.compiler.ft900.debug.base.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${FT9XX_TOOLCHAIN}/hardware/include&quot;"/>
+									<listOptionValue builtIn="false" value="../drivers/temp_sensor"/>
+									<listOptionValue builtIn="false" value="../drivers/rotary"/>
 									<listOptionValue builtIn="false" value="../include"/>
 									<listOptionValue builtIn="false" value="../drivers/eve_hal"/>
 									<listOptionValue builtIn="false" value="../drivers/LCD"/>
@@ -38,6 +40,8 @@
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="com.brtchip.defsym.ft900.debug.base.383401112" name="Defined symbols (-D)" superClass="com.brtchip.defsym.ft900.debug.base" useByScannerDiscovery="true" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__FT900__"/>
+									<listOptionValue builtIn="false" value="_DEBUG"/>
+									<listOptionValue builtIn="false" value="ENABLE_USBDBG=1"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1189897425" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>

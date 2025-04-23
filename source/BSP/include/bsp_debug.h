@@ -8,8 +8,6 @@
 #include "usbdbg.h"
 #include "tinyprintf.h"
 
-#define ENABLE_USBDBG   1
-
 #if ENABLE_USBDBG
 #define PR_ERROR(fmt, ...)              \
 	do                                  \
